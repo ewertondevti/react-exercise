@@ -1,5 +1,5 @@
-import { Col, Form, InputNumber, InputNumberProps, Row, Slider } from "antd";
-import React, { FC } from "react";
+import { Col, Form, InputNumber, InputNumberProps, Row, Slider } from 'antd';
+import { FC } from 'react';
 
 type Props = {
   min?: number;
@@ -9,17 +9,10 @@ type Props = {
   label: string;
 };
 
-export const StepContent: FC<Props> = ({
-  min,
-  max,
-  value,
-  fieldname,
-  label,
-}) => {
+export const StepContent: FC<Props> = ({ min, max, value, fieldname, label }) => {
   const form = Form.useFormInstance();
 
-  const onInputChange: InputNumberProps["onChange"] = (value) =>
-    form.setFieldValue(fieldname, value);
+  const onInputChange: InputNumberProps['onChange'] = value => form.setFieldValue(fieldname, value);
 
   return (
     <Row>
@@ -30,13 +23,7 @@ export const StepContent: FC<Props> = ({
       </Col>
 
       <Col>
-        <InputNumber
-          min={min}
-          max={max}
-          placeholder="0"
-          value={value}
-          onChange={onInputChange}
-        />
+        <InputNumber min={min} max={max} placeholder="0" value={value} onChange={onInputChange} />
       </Col>
     </Row>
   );
