@@ -1,20 +1,18 @@
-import { Col, Form, Row, Steps, StepsProps } from "antd";
-import React from "react";
-import { AmountStep } from "./CustomSteps/AmountStep";
-import { MounthsStep } from "./CustomSteps/MounthsStep";
-
+import { Col, Form, Row, Steps, StepsProps } from 'antd';
+import { AmountStep } from './CustomSteps/AmountStep';
+import { MounthsStep } from './CustomSteps/MounthsStep';
 const App = () => {
-  const items: StepsProps["items"] = [
+  const items: StepsProps['items'] = [
     {
-      title: "Amount",
+      title: 'Amount',
       description: <AmountStep />,
     },
     {
-      title: "Months",
+      title: 'Months',
       description: <MounthsStep />,
     },
     {
-      title: "Resume",
+      title: 'Resume',
       description: <></>,
     },
   ];
