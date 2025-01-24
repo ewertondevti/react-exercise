@@ -1,7 +1,14 @@
 {
-    "limits": {
-        "min": 50,
-        "max": 1000,
-        "currency": "eur"
+  "limits": {
+    "min": 50,
+    "max": 1000,
+    "currency": "eur"
+  },
+  "credits": [
+    {
+      "id": "f830",
+      "amount": 994,
+      "months": 12
     }
+  ]
 }

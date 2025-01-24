@@ -5,6 +5,7 @@
   "main": "./dist/react_exercise.cjs.js",
   "module": "./dist/react_exercise.es.mjs",
   "types": "dist/main.d.ts",
+  "license": "MIT",
   "exports": {
     ".": {
       "types": "./dist/main.d.ts",
@@ -28,11 +29,24 @@
     "mock": "json-server db.json -p 3001"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
+    "@radix-ui/react-label": "^2.1.1",
+    "@radix-ui/react-slider": "^1.2.2",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@tailwindcss/postcss": "^4.0.0",
     "antd": "^5.23.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.474.0",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-hook-form": "^7.54.2",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "4.0.0",
     "@testing-library/jest-dom": "6.4.5",
     "@testing-library/react": "15.0.7",
     "@testing-library/user-event": "14.5.2",
@@ -41,10 +55,13 @@
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "4.2.1",
     "@vitest/coverage-istanbul": "1.6.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "8.56.0",
     "jsdom": "24.0.0",
     "json-server": "1.0.0-beta.0",
+    "postcss": "^8.5.1",
     "prettier": "3.2.5",
+    "tailwindcss": "^4.0.0",
     "typescript": "5.3.3",
     "vite": "5.2.11",
     "vite-bundle-visualizer": "1.2.1",

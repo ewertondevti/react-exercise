@@ -1,29 +1,54 @@
-import { Col, Form, InputNumber, InputNumberProps, Row, Slider } from 'antd';
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Col, Flex, InputNumber, InputNumberProps, Row, Slider } from 'antd';
 import { FC } from 'react';
+import { useFormContext } from 'react-hook-form';
 
 type Props = {
   min?: number;
   max?: number;
-  value: number;
   fieldname: string;
   label: string;
+  prefix?: string;
+  suffix?: string;
 };
 
-export const StepContent: FC<Props> = ({ min, max, value, fieldname, label }) => {
-  const form = Form.useFormInstance();
+export const StepContent: FC<Props> = ({ min, max, fieldname, label, prefix, suffix }) => {
+  const { control, watch, setValue } = useFormContext();
 
-  const onInputChange: InputNumberProps['onChange'] = value => form.setFieldValue(fieldname, value);
+  const onInputChange: InputNumberProps['onChange'] = value => setValue(fieldname, value);
+
+  const value = watch(fieldname);
 
   return (
     <Row>
-      <Col span={24}>
-        <Form.Item name={fieldname} label={label}>
-          <Slider min={min} max={max} />
-        </Form.Item>
-      </Col>
+      <Col flex={1}>
+        <FormField
+          control={control}
+          name={fieldname}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{label}</FormLabel>
+              <Flex align="center" gap={10}>
+                <FormControl>
+                  <Slider {...field} min={min} max={max} className="w-[100%]" />
+                </FormControl>
 
-      <Col>
-        <InputNumber min={min} max={max} placeholder="0" value={value} onChange={onInputChange} />
+                <InputNumber
+                  min={min}
+                  max={max}
+                  placeholder="0"
+                  value={value}
+                  onChange={onInputChange}
+                  prefix={prefix}
+                  suffix={suffix}
+                  className="min-w-[120px]"
+                />
+              </Flex>
+
+              <FormMessage className="text-[red]" />
+            </FormItem>
+          )}
+        />
       </Col>
     </Row>
   );
